@@ -21,3 +21,5 @@ function App() {
 }
 
 export default App;
+
+//sidebar css ini ayarlıyorum

@@ -7,6 +7,7 @@ import { FaRegBell } from "react-icons/fa6";
 import { MdLightMode } from "react-icons/md";
 import { IoMoonSharp } from "react-icons/io5";
 import { changeMode } from "../../Redux/themeSlice";
+import profile from "../../Assets/profile.jpg";
 
 const Searchbar = () => {
   const dispatch = useDispatch();
@@ -19,8 +20,10 @@ const Searchbar = () => {
   };
 
   return (
-    <div className={`w-full h-16 flex items-center ${theme[0]} ${theme[1]}`}>
-      <div className="w-10/12 lg:h-full flex items-center justify-center">
+    <div
+      className={`w-full h-12 flex items-center justify-between ${theme[0]} ${theme[1]} font-roboto`}
+    >
+      <div className="w-9/12 lg:h-full flex items-center justify-center">
         <div
           className={`w-6/12 h-8 rounded-full flex items-center justify-between ${theme[2]} ${theme[1]}`}
         >
@@ -41,18 +44,22 @@ const Searchbar = () => {
       <div className="w-2/12 h-full flex items-center justify-evenly">
         {mode ? (
           <MdLightMode
-            className="text-xl cursor-pointer "
+            className="text-lg font-thin cursor-pointer "
             onClick={modeChange}
           />
         ) : (
           <IoMoonSharp
-            className="text-xl cursor-pointer "
+            className="text-lg font-thin cursor-pointer "
             onClick={modeChange}
           />
         )}
-        <LuVideo className={`text-xl  ${theme[1]}`} />
-        <FaRegBell className={`text-xl  ${theme[1]}`} />
-        <img src="" alt="" className="w-7 h-7 rounded-full bg-pink-50" />
+        <LuVideo className={`text-lg font-thin ${theme[1]}`} />
+        <FaRegBell className={`text-lg font-thin ${theme[1]}`} />
+        <img
+          src={profile}
+          alt=""
+          className="w-7 h-7 rounded-full bg-pink-50 object-cover"
+        />
       </div>
     </div>
   );

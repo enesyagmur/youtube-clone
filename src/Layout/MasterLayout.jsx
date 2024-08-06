@@ -7,7 +7,7 @@ const MasterLayout = () => {
   return (
     <div className="w-full mih-h-screen flex">
       <Sidebar />
-      <div className="flex-grow h-full flex flex-col">
+      <div className="flex-grow h-full flex flex-col lg:ml-52">
         <Searchbar />
         <Outlet />
       </div>
