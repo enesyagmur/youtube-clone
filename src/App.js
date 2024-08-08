@@ -22,4 +22,6 @@ function App() {
 
 export default App;
 
-//sidebar css ini ayarlıyorum
+//video sayfasında tarih bilgisini ayarlıyorum - sonra video kategorisine göre sağında yine video onerileri ekleyeceğim
+// channel sayfasını yapacağım
+// search özelliği ekleyeceğim

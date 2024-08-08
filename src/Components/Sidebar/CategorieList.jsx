@@ -8,13 +8,17 @@ import { TfiCup } from "react-icons/tfi";
 import { SiYoutubeshorts } from "react-icons/si";
 import { MdOutlineSubscriptions } from "react-icons/md";
 import { GrHistory } from "react-icons/gr";
+import { useNavigate } from "react-router-dom";
 
 const CategorieList = ({ theme2 }) => {
+  const navigate = useNavigate();
   return (
     <div className="w-10/12  flex flex-col">
       <div className="sidebar-categorie">
         <MdHomeFilled className="text-lg" />
-        <p className="sidebar-categorie-name">Home</p>
+        <p className="sidebar-categorie-name" onClick={() => navigate("/")}>
+          Home
+        </p>
       </div>
       <div className="sidebar-categorie">
         <SiYoutubeshorts className="text-lg" />
@@ -33,7 +37,9 @@ const CategorieList = ({ theme2 }) => {
       </div>
       <div className="sidebar-categorie">
         <FaFire className="text-lg" />
-        <p className="sidebar-categorie-name">Trends</p>
+        <p className="sidebar-categorie-name" onClick={() => navigate("/")}>
+          Trends
+        </p>
       </div>
       <div className="sidebar-categorie">
         <LuMusic4 className="text-md" />
