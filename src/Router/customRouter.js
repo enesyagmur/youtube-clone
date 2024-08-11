@@ -1,6 +1,7 @@
 import Categories from "../Pages/Categories/Categories";
 import Channel from "../Pages/Channel/Channel";
 import Home from "../Pages/Home/Home";
+import Search from "../Pages/Search/Search";
 import Video from "../Pages/Video/Video";
 
 export const customRouter = [
@@ -9,7 +10,7 @@ export const customRouter = [
     element: <Home />,
   },
   {
-    path: "/categories",
+    path: "/categories/:id",
     element: <Categories />,
   },
   {
@@ -19,5 +20,9 @@ export const customRouter = [
   {
     path: "/video/:id",
     element: <Video />,
+  },
+  {
+    path: "/search/:search",
+    element: <Search />,
   },
 ];

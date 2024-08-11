@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { IoSearchOutline } from "react-icons/io5";
 import { FaMicrophone } from "react-icons/fa";
@@ -8,8 +8,11 @@ import { MdLightMode } from "react-icons/md";
 import { IoMoonSharp } from "react-icons/io5";
 import { changeMode } from "../../Redux/themeSlice";
 import profile from "../../Assets/profile.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Searchbar = () => {
+  const [search, setSearch] = useState();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [mode, setMode] = useState(true);
   const theme = useSelector((state) => state.theme.colors);
@@ -17,6 +20,11 @@ const Searchbar = () => {
   const modeChange = () => {
     setMode(!mode);
     dispatch(changeMode());
+  };
+
+  const searchButtonFunc = () => {
+    navigate(`/search/${search}`);
+    setSearch("");
   };
 
   return (
@@ -30,9 +38,14 @@ const Searchbar = () => {
           <input
             type="text"
             placeholder="Search"
-            className={`w-11/12 h-7 ml-[2px] pl-4 text-sm  rounded-l-full placeholder-neutral-400`}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className={`w-11/12 h-7 ml-[2px] pl-4 text-sm text-black rounded-l-full placeholder-neutral-400`}
           />
-          <IoSearchOutline className="mr-3 text-lg" />
+          <IoSearchOutline
+            className="mr-3 text-lg"
+            onClick={searchButtonFunc}
+          />
         </div>
         <div
           className={`w-8 h-9 ml-2 rounded-full flex items-center justify-center ${theme[2]} ${theme[1]}`}

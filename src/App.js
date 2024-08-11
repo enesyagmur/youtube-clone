@@ -22,6 +22,6 @@ function App() {
 
 export default App;
 
-//video sayfasında tarih bilgisini ayarlıyorum - sonra video kategorisine göre sağında yine video onerileri ekleyeceğim
+//categories sayfasında uzunluğa göre filitre yapacağım
 // channel sayfasını yapacağım
 // search özelliği ekleyeceğim

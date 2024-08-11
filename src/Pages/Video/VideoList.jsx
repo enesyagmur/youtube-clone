@@ -1,21 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { getTopVideosForCategory } from "../../Api/topVideosInCategoryApi";
+
 import { useNavigate, useParams } from "react-router-dom";
+import { getCategories } from "../../Api/categoriesApi";
+import { getTopChannels } from "../../Api/topChannelsApi";
+import { getTopVideosForCategory } from "../../Api/topVideosInCategoryApi";
 
 const VideoList = ({ categoryId }) => {
   const { id } = useParams();
   const [videoList, setVideoList] = useState();
   const navigate = useNavigate();
 
-  const fetchVıdeosSameCategory = async (categoryId) => {
+  const fetchVıdeosSameCategory = async (categoryId, count) => {
     const sameCategoryViideosResult = await getTopVideosForCategory(categoryId);
-    console.log(sameCategoryViideosResult);
+
     setVideoList(sameCategoryViideosResult);
   };
 
   useEffect(() => {
-    fetchVıdeosSameCategory(categoryId);
+    fetchVıdeosSameCategory(categoryId, 6);
   }, []);
+
+  const goCategory = (id) => {
+    navigate(`/categories/${id}`);
+  };
 
   return (
     <div className="lg:w-3/12 min-h-screen flex flex-col items-center pt-6">
@@ -56,7 +63,10 @@ const VideoList = ({ categoryId }) => {
           )
         : null}
 
-      <button className="w-10/12 h-12 bg-neutral-500 rounded-md mt-4 cursor-pointer hover:opacity-80">
+      <button
+        className="w-10/12 h-12 bg-neutral-500 rounded-md mt-4 cursor-pointer hover:opacity-80"
+        onClick={() => goCategory(categoryId)}
+      >
         More Videos
       </button>
     </div>
