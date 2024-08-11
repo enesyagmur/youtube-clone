@@ -22,7 +22,12 @@ const CategorieList = ({ theme2 }) => {
       </div>
       <div className="sidebar-categorie">
         <SiYoutubeshorts className="text-lg" />
-        <p className="sidebar-categorie-name">Shorts</p>
+        <p
+          className="sidebar-categorie-name"
+          onClick={() => navigate("/shorts")}
+        >
+          Shorts
+        </p>
       </div>
       <div className="sidebar-categorie">
         <MdOutlineSubscriptions className="text-lg" />
