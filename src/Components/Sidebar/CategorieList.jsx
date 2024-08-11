@@ -12,6 +12,11 @@ import { useNavigate } from "react-router-dom";
 
 const CategorieList = ({ theme2 }) => {
   const navigate = useNavigate();
+
+  const goCategory = (categoryId) => {
+    navigate(`/selectedCategory/${categoryId}`);
+  };
+
   return (
     <div className="w-10/12  flex flex-col">
       <div className="sidebar-categorie">
@@ -48,7 +53,9 @@ const CategorieList = ({ theme2 }) => {
       </div>
       <div className="sidebar-categorie">
         <LuMusic4 className="text-md" />
-        <p className="sidebar-categorie-name">Music</p>
+        <p className="sidebar-categorie-name" onClick={() => goCategory(10)}>
+          Music
+        </p>
       </div>
       <div className="sidebar-categorie">
         <CgLivePhoto className="text-lg" />
@@ -56,11 +63,15 @@ const CategorieList = ({ theme2 }) => {
       </div>
       <div className="sidebar-categorie">
         <LuGamepad2 className="text-lg" />
-        <p className="sidebar-categorie-name">Games</p>
+        <p className="sidebar-categorie-name" onClick={() => goCategory(20)}>
+          Games
+        </p>
       </div>
       <div className="sidebar-categorie">
         <TfiCup className="text-lg" />
-        <p className="sidebar-categorie-name">Spor</p>
+        <p className="sidebar-categorie-name" onClick={() => goCategory(17)}>
+          Spor
+        </p>
       </div>
     </div>
   );

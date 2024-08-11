@@ -1,36 +1,17 @@
-/* eslint-disable jsx-a11y/iframe-has-title */
-import React, { useEffect, useState } from "react";
-import { getTrends } from "../../Api/trendsApi";
+import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-const Trends = () => {
-  const [trends, setTrends] = useState();
+const List = ({ data }) => {
   const navigate = useNavigate();
-  useEffect(() => {
-    const fetchTrends = async () => {
-      const result = await getTrends();
-      setTrends(result);
-    };
-    fetchTrends();
-  }, []);
-
-  const goChannel = (id) => {
-    navigate(`/channel/${id}`);
-  };
-
-  const goVideo = (id) => {
-    navigate(`/video/${id}`);
-  };
-
   return (
     <div className="w-10/12 flex-col ml-36">
-      {trends
-        ? trends.map((item, index) => (
+      {data
+        ? data.map((item, index) => (
             <div
               className="w-8/12 h-40 flex  mt-4 cursor-pointer"
               key={index}
-              onClick={() => goVideo(item.id)}
+              onClick={() => navigate(`/video/${item.id}`)}
             >
               <img
                 src={item.snippet.thumbnails.high.url}
@@ -42,7 +23,7 @@ const Trends = () => {
                 <div className="w-full flex text-neutral-400 items-center">
                   <p
                     className=" text-[10px]"
-                    onClick={() => goChannel(item.snippet.channelId)}
+                    onClick={() => navigate(`/channel/${item.id}`)}
                   >
                     {item.snippet.channelTitle}
                   </p>
@@ -66,4 +47,4 @@ const Trends = () => {
   );
 };
 
-export default Trends;
+export default List;

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 import { useNavigate, useParams } from "react-router-dom";
-import { getCategories } from "../../Api/categoriesApi";
-import { getTopChannels } from "../../Api/topChannelsApi";
-import { getTopVideosForCategory } from "../../Api/topVideosInCategoryApi";
+
+import { getSelectedCategory } from "../../Api/selectedCategoryApi";
 
 const VideoList = ({ categoryId }) => {
   const { id } = useParams();
@@ -11,7 +10,10 @@ const VideoList = ({ categoryId }) => {
   const navigate = useNavigate();
 
   const fetchVıdeosSameCategory = async (categoryId, count) => {
-    const sameCategoryViideosResult = await getTopVideosForCategory(categoryId);
+    const sameCategoryViideosResult = await getSelectedCategory(
+      categoryId,
+      count
+    );
 
     setVideoList(sameCategoryViideosResult);
   };

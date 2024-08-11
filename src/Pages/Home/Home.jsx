@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { FaFire } from "react-icons/fa6";
 import { useSelector } from "react-redux";
-import Trends from "./Trends";
+
+import { getTrendsFunc } from "../../Api/trendsApi";
+import List from "../../Components/DataList/List";
 
 const Home = () => {
   const theme = useSelector((state) => state.theme.colors);
+  const [trends, setTrends] = useState();
+
+  useEffect(() => {
+    const fetchTrends = async () => {
+      const result = await getTrendsFunc();
+      setTrends(result);
+    };
+    fetchTrends();
+  }, []);
 
   return (
     <div
@@ -16,7 +27,7 @@ const Home = () => {
         <p className="text-4xl font-bold ml-2">Trends</p>
       </div>
       <div className={`w-11/12 h-[2px] ${theme[2]}`}></div>
-      <Trends />
+      <List data={trends} />
     </div>
   );
 };
