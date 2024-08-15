@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const API_KEY = "AIzaSyDntjNid8GujwqeYDdKqUSh1CVqtrjp6hI";
+import API_KEY from "./config";
 
 export const getSingleVideo = async (videoId) => {
   const BASE_URL = `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${API_KEY}&part=snippet,statistics,contentDetails`;

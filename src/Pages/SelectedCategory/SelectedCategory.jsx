@@ -33,7 +33,6 @@ const SelectedCategory = () => {
       try {
         const result = await getSelectedCategory(categoryId, 10);
         setData(result);
-        console.log(result);
       } catch (error) {
         console.error(state.title, "sayfasında verileri alırken hata:", error);
       }

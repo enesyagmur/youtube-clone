@@ -1,8 +1,6 @@
-import Categories from "../Pages/Categories/Categories";
 import Channel from "../Pages/Channel/Channel";
-import Game from "../Pages/Game/Game";
 import Home from "../Pages/Home/Home";
-import Music from "../Pages/Music/Music";
+import Live from "../Pages/Live/Live";
 import Search from "../Pages/Search/Search";
 import SelectedCategory from "../Pages/SelectedCategory/SelectedCategory";
 import Shorts from "../Pages/Shorts/Shorts";
@@ -13,10 +11,7 @@ export const customRouter = [
     path: "/",
     element: <Home />,
   },
-  {
-    path: "/categories/:id",
-    element: <Categories />,
-  },
+
   {
     path: "/channel/:id",
     element: <Channel />,
@@ -34,15 +29,11 @@ export const customRouter = [
     element: <Shorts />,
   },
   {
-    path: "/music",
-    element: <Music />,
-  },
-  {
-    path: "/game",
-    element: <Game />,
-  },
-  {
     path: "/selectedCategory/:categoryId",
     element: <SelectedCategory />,
+  },
+  {
+    path: "/live",
+    element: <Live />,
   },
 ];

@@ -59,7 +59,9 @@ const CategorieList = ({ theme2 }) => {
       </div>
       <div className="sidebar-categorie">
         <CgLivePhoto className="text-lg" />
-        <p className="sidebar-categorie-name">Live</p>
+        <p className="sidebar-categorie-name" onClick={() => navigate("/live")}>
+          Live
+        </p>
       </div>
       <div className="sidebar-categorie">
         <LuGamepad2 className="text-lg" />

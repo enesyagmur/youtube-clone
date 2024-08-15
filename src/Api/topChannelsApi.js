@@ -1,6 +1,6 @@
 import axios from "axios";
+import API_KEY from "./config";
 
-const API_KEY = "AIzaSyDntjNid8GujwqeYDdKqUSh1CVqtrjp6hI";
 const BASE_URL = "https://www.googleapis.com/youtube/v3";
 
 export const getTopChannels = async () => {

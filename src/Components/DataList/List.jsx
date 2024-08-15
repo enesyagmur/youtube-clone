@@ -16,7 +16,7 @@ const List = ({ data }) => {
               <img
                 src={item.snippet.thumbnails.high.url}
                 alt=""
-                className="w-4/12 h-36 object-cover rounded-lg cursor-pointer"
+                className="w-5/12 h-40 object-cover rounded-lg cursor-pointer"
               />
               <div className="w-6/12 h-36 ml-4 flex flex-col justify-center ">
                 <p className="w-full">{item.snippet.title}</p>

@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const API_KEY = "AIzaSyCFqdAhp2HEsQZVJlPic0h0808pKvACrnQ";
+import API_KEY from "./config";
 
 export const getChannel = async (channelId) => {
   const statistics_url = `https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${channelId}&key=${API_KEY}`;

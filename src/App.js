@@ -22,6 +22,5 @@ function App() {
 
 export default App;
 
-//categories sayfasında uzunluğa göre filitre yapacağım
-// channel sayfasını yapacağım
-// search özelliği ekleyeceğim
+// api hatası alıyorum home sayfasında category seçiyordum
+// shorts sayfasını ful screen gibi yapacağım
