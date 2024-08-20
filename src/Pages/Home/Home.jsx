@@ -1,37 +1,49 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { getSelectedCategory } from "../../Api/selectedCategoryApi";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa";
-import { getSelectedCategoryAndTimeFunc } from "../../Api/videosWithCategoryAndTimeApi";
+import Loading from "../Loading/Loading";
+import { getDataForHome } from "../../Api/homeDataApi";
 
 const Home = () => {
-  const [data, setData] = useState();
   const theme = useSelector((state) => state.theme.colors);
+  const homeData = useSelector((state) => state.homeData.data);
+  const [showLoading, setShowLoading] = useState(false);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [data, setData] = useState();
+
+  const checkDataCame = () => {
+    if (data) {
+      setShowLoading(false);
+    } else {
+      setShowLoading(true);
+    }
+  };
+  const fetchData = async () => {
+    try {
+      if (homeData.length === 0) {
+        const result = await getDataForHome(dispatch);
+        setData(result);
+      } else {
+        setData(homeData);
+      }
+    } catch (error) {
+      console.error("Home sayfasında hata:", error);
+    }
+  };
 
   useEffect(() => {
-    const fetchMixCaegory = async () => {
-      try {
-        const result1 = await getSelectedCategoryAndTimeFunc(10, 5, "long");
-        const result2 = await getSelectedCategoryAndTimeFunc(17, 5, "long");
-        const result3 = await getSelectedCategoryAndTimeFunc(23, 5, "short");
-        const result4 = await getSelectedCategoryAndTimeFunc(27, 5, "long");
-        const result5 = await getSelectedCategoryAndTimeFunc(20, 5, "long");
-
-        setData([...result1, ...result2, ...result3, ...result4, ...result5]);
-        console.log(data);
-      } catch (error) {
-        console.error("Home sayfasında veriiyi alırken hata:", error);
-      }
-    };
-    fetchMixCaegory();
-  }, []);
+    fetchData();
+    checkDataCame();
+  }, [data]);
 
   return (
     <div
       className={`w-full min-h-screen  ${theme[0]} ${theme[1]} flex flex-wrap`}
     >
+      {showLoading && <Loading />}
+
       {data
         ? data.map((item, index) => (
             <div
@@ -49,7 +61,9 @@ const Home = () => {
                 <div className="w-full flex text-neutral-400 items-center">
                   <p
                     className=" text-[10px]"
-                    onClick={() => navigate(`/channel/${item.id}`)}
+                    onClick={() =>
+                      navigate(`/channel/${item.snippet.channelId}`)
+                    }
                   >
                     {item.snippet.channelTitle}
                   </p>

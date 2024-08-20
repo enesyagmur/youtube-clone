@@ -22,5 +22,6 @@ function App() {
 
 export default App;
 
-// api hatası alıyorum home sayfasında category seçiyordum
+//selectedcategory de sorun var music her yüklendiğinde tekrar aynı veriyi kopyalıyor ve sayfa ilk yüklendiğinde veriler çekilmiyor
+// loading ve notfound sayfalarını yapacağım
 // shorts sayfasını ful screen gibi yapacağım

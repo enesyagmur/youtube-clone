@@ -47,7 +47,10 @@ const CategorieList = ({ theme2 }) => {
       </div>
       <div className="sidebar-categorie">
         <FaFire className="text-lg" />
-        <p className="sidebar-categorie-name" onClick={() => navigate("/")}>
+        <p
+          className="sidebar-categorie-name"
+          onClick={() => navigate("/trends")}
+        >
           Trends
         </p>
       </div>

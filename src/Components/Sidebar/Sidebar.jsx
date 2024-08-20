@@ -5,9 +5,11 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import yotubeLogo from "../../Assets/youtube-logo.png";
 import CategorieList from "./CategorieList";
 import TopChannels from "./TopChannels";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const theme = useSelector((state) => state.theme.colors);
+  const navigate = useNavigate();
   return (
     <div
       className={`lg:w-52 min-h-screen flex flex-col items-start ${theme[0]} ${theme[1]} pl-2 font-roboto fixed`}
@@ -15,7 +17,10 @@ const Sidebar = () => {
       <div className="lg:w-10/12 h-12 flex items-center justify-evenly">
         <RxHamburgerMenu />
 
-        <div className="w-7/12 h-full flex items-center justify-start">
+        <div
+          className="w-7/12 h-full flex items-center justify-start cursor-pointer"
+          onClick={() => navigate("/")}
+        >
           <img
             src={yotubeLogo}
             alt=""

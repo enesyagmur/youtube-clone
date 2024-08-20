@@ -41,20 +41,24 @@ const Video = () => {
     setPublishDate(publish);
   };
 
-  useEffect(() => {
-    const fetchVideo = async (VideoId) => {
-      const videoResult = await getSingleVideo(VideoId);
-      setVideo(videoResult);
-      publishDateConvertFunc(videoResult.snippet.publishedAt);
-      fetchChannelStatistics(videoResult.snippet.channelId);
-    };
-    fetchVideo(id);
-  }, []);
-
   const fetchChannelStatistics = async (channelId) => {
     const channelStatisticsResult = await getChannelStatistics(channelId);
     setChannel(channelStatisticsResult);
   };
+
+  useEffect(() => {
+    const fetchVideo = async (VideoId) => {
+      try {
+        const videoResult = await getSingleVideo(VideoId);
+        setVideo(videoResult);
+        publishDateConvertFunc(videoResult.snippet.publishedAt);
+        fetchChannelStatistics(videoResult.snippet.channelId);
+      } catch (error) {
+        console.error("single videoyu çekerken video.jsx te hata:", error);
+      }
+    };
+    fetchVideo(id);
+  }, []);
 
   return (
     <div className={`w-full min-h-screen flex ${theme[0]} ${theme[1]}`}>

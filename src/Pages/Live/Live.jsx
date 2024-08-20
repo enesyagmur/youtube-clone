@@ -1,32 +1,53 @@
 import React, { useEffect, useState } from "react";
 import { getLiveFunc } from "../../Api/liveApi";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { CgLivePhoto } from "react-icons/cg";
-import List from "../../Components/DataList/List";
-import { Navigate, useNavigate } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa";
+import Loading from "../Loading/Loading";
 
 const Live = () => {
   const [data, setData] = useState();
+  const [showLoading, setShowLoading] = useState(false);
+
   const theme = useSelector((state) => state.theme.colors);
+  const liveData = useSelector((state) => state.liveData.data);
+
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const checkDataCame = () => {
+    if (data) {
+      setShowLoading(false);
+    } else {
+      setShowLoading(true);
+    }
+  };
+  const fetchLive = async () => {
+    try {
+      if (liveData.length === 0) {
+        const result = await getLiveFunc(dispatch);
+        setData(result);
+      } else {
+        setData(liveData);
+      }
+    } catch (error) {
+      console.error("Live sayfasında hata:", error);
+    }
+  };
 
   useEffect(() => {
-    const fetchLive = async () => {
-      try {
-        const result = await getLiveFunc();
-        console.log(result);
-        setData(result);
-      } catch (error) {
-        console.error("Live sayfasında hata:", error);
-      }
-    };
     fetchLive();
-  }, []);
+    checkDataCame();
+  }, [data]);
+
   return (
     <div
       className={`w-full min-h-screen flex-col items-center ${theme[0]} ${theme[1]}`}
     >
+      {showLoading && <Loading />}
+
       <div className={`w-11/12 h-28 flex items-center mt-4 `}>
         <CgLivePhoto className="text-6xl ml-36" />
 

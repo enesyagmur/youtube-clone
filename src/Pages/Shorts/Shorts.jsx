@@ -1,32 +1,51 @@
 import React, { useEffect, useState } from "react";
-import { getShortsFunc } from "../../Api/shortsApi";
-import { useSelector } from "react-redux";
+import { getDataForShorts } from "../../Api/shortsApi";
+import { useDispatch, useSelector } from "react-redux";
 import { FaCheckCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import Loading from "../Loading/Loading";
 
 const Shorts = () => {
-  const [shortList, setShortList] = useState();
   const theme = useSelector((state) => state.theme.colors);
+  const shortsData = useSelector((state) => state.shortsData.data);
+  const [showLoading, setShowLoading] = useState(false);
+  const [data, setData] = useState();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const checkDataCame = () => {
+    if (data) {
+      setShowLoading(false);
+    } else {
+      setShowLoading(true);
+    }
+  };
+
+  const fetchData = async () => {
+    try {
+      if (shortsData.length === 0) {
+        const result = await getDataForShorts(dispatch);
+        setData(result);
+      } else {
+        setData(shortsData);
+      }
+    } catch (error) {
+      console.error("shors sayfasında hata:", error);
+    }
+  };
 
   useEffect(() => {
-    const fetchShorts = async () => {
-      try {
-        const result = await getShortsFunc();
-        console.log(result);
-        setShortList(result);
-      } catch (error) {
-        console.error("shorts sayfasında verileri alırken hata:", error);
-      }
-    };
-    fetchShorts();
-  }, []);
+    fetchData();
+    checkDataCame();
+  }, [data]);
   return (
     <div
       className={`w-full min-h-screen flex-col items-center ${theme[0]} ${theme[1]}`}
     >
-      {shortList
-        ? shortList.map((item, index) => (
+      {showLoading && <Loading />}
+
+      {shortsData
+        ? shortsData.map((item, index) => (
             <div
               className="w-8/12 h-40 flex  mt-4 cursor-pointer"
               key={index}

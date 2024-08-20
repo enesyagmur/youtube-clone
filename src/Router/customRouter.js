@@ -4,6 +4,7 @@ import Live from "../Pages/Live/Live";
 import Search from "../Pages/Search/Search";
 import SelectedCategory from "../Pages/SelectedCategory/SelectedCategory";
 import Shorts from "../Pages/Shorts/Shorts";
+import Trends from "../Pages/Trends/Trends";
 import Video from "../Pages/Video/Video";
 
 export const customRouter = [
@@ -11,7 +12,10 @@ export const customRouter = [
     path: "/",
     element: <Home />,
   },
-
+  {
+    path: "/trends",
+    element: <Trends />,
+  },
   {
     path: "/channel/:id",
     element: <Channel />,

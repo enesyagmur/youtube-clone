@@ -3,12 +3,22 @@ import { useNavigate, useParams } from "react-router-dom";
 import { searchFunc } from "../../Api/searchApi";
 import { useSelector } from "react-redux";
 import { FaCheckCircle } from "react-icons/fa";
+import Loading from "../Loading/Loading";
 
 const Search = () => {
   const [searchList, setSearchList] = useState();
   const navigate = useNavigate();
   const { search } = useParams();
   const theme = useSelector((state) => state.theme.colors);
+  const [showLoading, setShowLoading] = useState(false);
+
+  useEffect(() => {
+    setShowLoading(true);
+
+    setTimeout(() => {
+      setShowLoading(false);
+    }, 1400);
+  }, []);
 
   useEffect(() => {
     const getSearch = async () => {
@@ -26,6 +36,8 @@ const Search = () => {
   }, [search]);
   return (
     <div className={`w-full flex-col  min-h-screen ${theme[0]} ${theme[1]}`}>
+      {showLoading && <Loading />}
+
       {searchList
         ? searchList.map((item, index) => (
             <div
