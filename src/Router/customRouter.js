@@ -1,4 +1,3 @@
-import Channel from "../Pages/Channel/Channel";
 import Home from "../Pages/Home/Home";
 import Live from "../Pages/Live/Live";
 import Search from "../Pages/Search/Search";
@@ -16,10 +15,7 @@ export const customRouter = [
     path: "/trends",
     element: <Trends />,
   },
-  {
-    path: "/channel/:id",
-    element: <Channel />,
-  },
+
   {
     path: "/video/:id",
     element: <Video />,
