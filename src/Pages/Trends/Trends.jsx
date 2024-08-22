@@ -46,10 +46,12 @@ const Trends = () => {
     >
       {showLoading && <Loading />}
 
-      <div className={`w-11/12 h-28 flex items-center mt-4 `}>
-        <FaFire className="text-5xl ml-36" />
+      <div
+        className={`w-11/12 h-28 flex items-center justify-center sm:justify-start mt-4 `}
+      >
+        <FaFire className="text-4xl sm:text-5xl sm:ml-14 md:ml-24 lg:ml-36" />
 
-        <p className="text-4xl font-bold ml-4">Trends</p>
+        <p className="text-3xl sm:text-4xl font-bold ml-4">Trends</p>
       </div>
       <div className={`w-11/12 h-[2px] ${theme[2]}`}></div>
       <List data={data} />

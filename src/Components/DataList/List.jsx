@@ -5,20 +5,20 @@ import { useNavigate } from "react-router-dom";
 const List = ({ data }) => {
   const navigate = useNavigate();
   return (
-    <div className="w-10/12 flex-col ml-36">
+    <div className="w-full sm:w-11/12 md:w-11/12 lg:w-10/12 flex-col ml-0 sm:ml-14 md:ml-24 lg:ml-36">
       {data
         ? data.map((item, index) => (
             <div
-              className="w-8/12 h-40 flex  mt-4 cursor-pointer"
+              className="w-full sm:w-11/12 md:w-10/12 lg:w-8/12 h-72 sm:h-48 sm:flex-row flex flex-col sm:mt-4 cursor-pointer"
               key={index}
               onClick={() => navigate(`/video/${item.id}`)}
             >
               <img
                 src={item.snippet.thumbnails.high.url}
                 alt=""
-                className="w-5/12 h-40 object-cover rounded-lg cursor-pointer"
+                className="w-11/12 sm:w-8/12 lg:w-7/12 h-48 object-cover rounded-xl cursor-pointer"
               />
-              <div className="w-6/12 h-36 ml-4 flex flex-col justify-center ">
+              <div className="w-full sm:w-4/12 lg:w-5/12 h-24 sm:h-36 sm:ml-4 flex flex-col justify-center ">
                 <p className="w-full">{item.snippet.title}</p>
                 <div className="w-full flex text-neutral-400 items-center">
                   <p

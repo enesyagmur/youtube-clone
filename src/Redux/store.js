@@ -7,7 +7,6 @@ import sporSlice from "./sporSlice";
 import musicSlice from "./musicSlice";
 import trendsSlice from "./trendsSlice";
 import liveSlice from "./liveSlice";
-import channelsSlice from "./channelsSlice";
 
 export const store = configureStore({
   reducer: {

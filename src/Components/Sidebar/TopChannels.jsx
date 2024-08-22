@@ -19,7 +19,7 @@ const TopChannels = ({ theme2 }) => {
   }, []);
 
   return (
-    <div className="w-10/12 flex flex-col items-center">
+    <div className="w-full md:w-10/12 flex flex-col items-center">
       <div className="w-full h-10 flex items-center justify-center">
         <div className={`w-full h-[2px] ${theme2}`}></div>
       </div>
@@ -32,9 +32,9 @@ const TopChannels = ({ theme2 }) => {
               <img
                 src={item.snippet.thumbnails.medium.url}
                 alt=""
-                className="w-[30px] h-[30px] object-cover rounded-full"
+                className="w-[30px] h-[30px] object-cover rounded-full ml-2"
               />
-              <p className="text-sm ml-4">
+              <p className="hidden md:flex text-sm md:ml-4">
                 {item.snippet.channelTitle.split(" ")[0]}
               </p>
             </div>

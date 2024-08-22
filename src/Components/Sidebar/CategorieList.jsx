@@ -19,20 +19,13 @@ const CategorieList = ({ theme2 }) => {
 
   return (
     <div className="w-10/12  flex flex-col">
-      <div className="sidebar-categorie">
+      <div className="sidebar-categorie" onClick={() => navigate("/")}>
         <MdHomeFilled className="text-lg" />
-        <p className="sidebar-categorie-name" onClick={() => navigate("/")}>
-          Home
-        </p>
+        <p className="sidebar-categorie-name">Home</p>
       </div>
-      <div className="sidebar-categorie">
+      <div className="sidebar-categorie" onClick={() => navigate("/shorts")}>
         <SiYoutubeshorts className="text-lg" />
-        <p
-          className="sidebar-categorie-name"
-          onClick={() => navigate("/shorts")}
-        >
-          Shorts
-        </p>
+        <p className="sidebar-categorie-name">Shorts</p>
       </div>
       <div className="sidebar-categorie">
         <MdOutlineSubscriptions className="text-lg" />
@@ -45,38 +38,25 @@ const CategorieList = ({ theme2 }) => {
       <div className="w-full h-10 flex items-center justify-center">
         <div className={`w-full h-[2px] ${theme2}`}></div>
       </div>
-      <div className="sidebar-categorie">
+      <div className="sidebar-categorie" onClick={() => navigate("/trends")}>
         <FaFire className="text-lg" />
-        <p
-          className="sidebar-categorie-name"
-          onClick={() => navigate("/trends")}
-        >
-          Trends
-        </p>
+        <p className="sidebar-categorie-name">Trends</p>
       </div>
-      <div className="sidebar-categorie">
+      <div className="sidebar-categorie" onClick={() => goCategory(10)}>
         <LuMusic4 className="text-md" />
-        <p className="sidebar-categorie-name" onClick={() => goCategory(10)}>
-          Music
-        </p>
+        <p className="sidebar-categorie-name">Music</p>
       </div>
-      <div className="sidebar-categorie">
+      <div className="sidebar-categorie" onClick={() => navigate("/live")}>
         <CgLivePhoto className="text-lg" />
-        <p className="sidebar-categorie-name" onClick={() => navigate("/live")}>
-          Live
-        </p>
+        <p className="sidebar-categorie-name">Live</p>
       </div>
-      <div className="sidebar-categorie">
+      <div className="sidebar-categorie" onClick={() => goCategory(20)}>
         <LuGamepad2 className="text-lg" />
-        <p className="sidebar-categorie-name" onClick={() => goCategory(20)}>
-          Games
-        </p>
+        <p className="sidebar-categorie-name">Games</p>
       </div>
-      <div className="sidebar-categorie">
+      <div className="sidebar-categorie" onClick={() => goCategory(17)}>
         <TfiCup className="text-lg" />
-        <p className="sidebar-categorie-name" onClick={() => goCategory(17)}>
-          Spor
-        </p>
+        <p className="sidebar-categorie-name">Spor</p>
       </div>
     </div>
   );

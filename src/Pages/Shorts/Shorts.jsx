@@ -41,33 +41,16 @@ const Shorts = () => {
       {shortsData
         ? shortsData.map((item, index) => (
             <div
-              className="w-full h-[600px] flex justify-center mt-8 cursor-pointer"
+              className="w-full h-[600px] flex justify-center mt-4 lg:mt-8 cursor-pointer"
               key={index}
               onClick={() => navigate(`/video/${item.id.videoId}`)}
             >
               <iframe
-                className="w-3/12 h-full  mt-4 rounded-xl"
+                className="w-11/12 sm:w-6/12 md:w-5/12 lg:w-4/12 h-full rounded-xl"
                 src={`https://www.youtube.com/embed/${item.id.videoId}`}
                 allowFullScreen
                 title={item.snippet.title}
               />
-              {/* <img
-                src={item.snippet.thumbnails.high.url}
-                alt=""
-                className="w-3/12 h-full object-cover rounded-lg cursor-pointer"
-              /> */}
-              {/* <div className="w-6/12 h-36 ml-4 flex flex-col justify-center ">
-                <p className="w-full">{item.snippet.title}</p>
-                <div className="w-full flex text-neutral-400 items-center">
-                  <p
-                    className=" text-[10px]"
-                    onClick={() => navigate(`${item.snippet.channelId}`)}
-                  >
-                    {item.snippet.channelTitle}
-                  </p>
-                  <FaCheckCircle className="text-[10px] ml-1 " />
-                </div>
-              </div> */}
             </div>
           ))
         : null}

@@ -48,25 +48,27 @@ const Live = () => {
     >
       {showLoading && <Loading />}
 
-      <div className={`w-11/12 h-28 flex items-center mt-4 `}>
-        <CgLivePhoto className="text-6xl ml-36" />
+      <div
+        className={`w-11/12 h-28 flex items-center justify-center sm:justify-start mt-4 `}
+      >
+        <CgLivePhoto className="text-4xl sm:text-5xl sm:ml-5 md:ml-10 lg:ml-36" />
 
-        <p className="text-4xl font-bold lg:ml-4">Live</p>
+        <p className="text-3xl sm:text-4xl font-bold ml-4">Live</p>
       </div>
       <div className={`w-11/12 h-[2px] ${theme[2]}`}></div>
       {data
         ? data.map((item, index) => (
             <div
-              className="w-8/12 h-40 flex  mt-4 cursor-pointer lg:ml-36"
+              className="w-full sm:w-10/12 md:w-9/12 lg:w-8/12 h-64 sm:h-40 sm:flex-row flex flex-col mt-4 cursor-pointer lg:ml-36"
               key={index}
               onClick={() => navigate(`/video/${item.id.videoId}`)}
             >
               <img
                 src={item.snippet.thumbnails.high.url}
                 alt=""
-                className="w-5/12 h-40 object-cover rounded-lg cursor-pointer border-2 border-red-700"
+                className="w-11/12 sm:w-7/12 md:w-6/12 lg:w-5/12 h-40 object-cover rounded-lg cursor-pointer border-2 border-red-700"
               />
-              <div className="w-6/12 h-36 ml-4 flex flex-col justify-center ">
+              <div className="w-full sm:w-4/12 md:w-5/12 lg:w-6/12 h-24 sm:h-36 ml-4 flex flex-col justify-center ">
                 <p className="w-full">{item.snippet.title}</p>
                 <div className="w-full flex text-neutral-400 items-center">
                   <p

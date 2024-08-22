@@ -12,10 +12,10 @@ const Sidebar = () => {
   const navigate = useNavigate();
   return (
     <div
-      className={`lg:w-52 min-h-screen flex flex-col items-start ${theme[0]} ${theme[1]} pl-2 font-roboto fixed`}
+      className={`w-16 md:w-52 min-h-screen flex flex-col items-start ${theme[0]} ${theme[1]} pl-2 font-roboto fixed`}
     >
-      <div className="lg:w-10/12 h-12 flex items-center justify-evenly">
-        <RxHamburgerMenu />
+      <div className="w-full md:w-10/12 h-12 flex items-center justify-evenly">
+        <RxHamburgerMenu className="hidden md:flex" />
 
         <div
           className="w-7/12 h-full flex items-center justify-start cursor-pointer"
@@ -26,7 +26,7 @@ const Sidebar = () => {
             alt=""
             className="w-[25px] h-[25px] object-cover"
           />
-          <p className="font-semibold">Youtube</p>
+          <p className="font-semibold hidden md:flex">Youtube</p>
           <p className="text-[8px] font-bold text-neutral-500 ml-1 mb-4"> TR</p>
         </div>
       </div>

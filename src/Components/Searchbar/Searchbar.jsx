@@ -31,9 +31,9 @@ const Searchbar = () => {
     <div
       className={`w-full h-12 flex items-center justify-between ${theme[0]} ${theme[1]} font-roboto`}
     >
-      <div className="w-9/12 lg:h-full flex items-center justify-center">
+      <div className="w-9/12 md:w-9/12 h-full flex items-center justify-center ">
         <div
-          className={`w-6/12 h-8 rounded-full flex items-center justify-between ${theme[2]} ${theme[1]}`}
+          className={`w-full sm:w-10/12 md:w-9/12 lg:w-6/12 h-8 rounded-full flex items-center justify-between ${theme[2]} ${theme[1]}`}
         >
           <input
             type="text"
@@ -43,18 +43,18 @@ const Searchbar = () => {
             className={`w-11/12 h-7 ml-[2px] pl-4 text-sm text-black rounded-l-full placeholder-neutral-400`}
           />
           <IoSearchOutline
-            className="mr-3 text-lg"
+            className="ml-1 mr-3 text-lg"
             onClick={searchButtonFunc}
           />
         </div>
         <div
-          className={`w-8 h-9 ml-2 rounded-full flex items-center justify-center ${theme[2]} ${theme[1]}`}
+          className={`hidden md:flex w-8 h-9 ml-2 rounded-full  items-center justify-center ${theme[2]} ${theme[1]}`}
         >
           <FaMicrophone />
         </div>
       </div>
 
-      <div className="w-2/12 h-full flex items-center justify-evenly">
+      <div className="w-2/12  h-full flex items-center justify-between sm:justify-evenly">
         {mode ? (
           <MdLightMode
             className="text-lg font-thin cursor-pointer "
@@ -66,8 +66,8 @@ const Searchbar = () => {
             onClick={modeChange}
           />
         )}
-        <LuVideo className={`text-lg font-thin ${theme[1]}`} />
-        <FaRegBell className={`text-lg font-thin ${theme[1]}`} />
+        <LuVideo className={`hidden md:flex text-lg font-thin ${theme[1]}`} />
+        <FaRegBell className={`hidden md:flex text-lg font-thin ${theme[1]}`} />
         <img
           src={profile}
           alt=""

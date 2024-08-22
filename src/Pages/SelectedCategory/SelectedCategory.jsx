@@ -95,19 +95,21 @@ const SelectedCategory = () => {
 
   return (
     <div
-      className={`w-full min-h-screen flex-col items-center ${theme[0]} ${theme[1]}`}
+      className={`w-full min-h-screen flex-col items-center  ${theme[0]} ${theme[1]}`}
     >
       {showLoading && <Loading />}
 
-      <div className={`w-11/12 h-28 flex items-center mt-4 `}>
+      <div
+        className={`w-11/12 h-28 flex items-center justify-center sm:justify-start mt-4 `}
+      >
         {categoryId === "10" ? (
-          <LuMusic className="text-5xl ml-36" />
+          <LuMusic className="text-4xl sm:text-5xl sm:ml-14 md:ml-24 lg:ml-36" />
         ) : categoryId === "17" ? (
-          <LuGamepad2 className="text-5xl ml-36" />
+          <TfiCup className="text-4xl sm:text-5xl sm:ml-14 md:ml-24 lg:ml-36 " />
         ) : categoryId === "20" ? (
-          <TfiCup className="text-5xl ml-36" />
+          <LuGamepad2 className="text-4xl sm:text-5xl sm:ml-14 md:ml-24 lg:ml-36" />
         ) : null}
-        <p className="text-4xl font-bold ml-4">{state.title}</p>
+        <p className="text-3xl sm:text-4xl font-bold ml-4">{state.title}</p>
       </div>
       <div className={`w-11/12 h-[2px] ${theme[2]}`}></div>
       <List data={data} />

@@ -6,5 +6,5 @@
   @apply w-full h-10 flex items-center justify-start  pl-4 hover:opacity-80 cursor-pointer;
 }
 .sidebar-categorie-name {
-  @apply ml-6 font-normal text-[12px];
+  @apply md:ml-6 font-normal text-[12px] hidden md:flex;
 }
