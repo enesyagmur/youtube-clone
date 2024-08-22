@@ -20,5 +20,4 @@ function App() {
 
 export default App;
 
-// notfound sayfalarını yapacağım
-// shorts sayfasını ful screen gibi yapacağım
+// shorts sayfasını yapıyorum

@@ -15,18 +15,15 @@ const Search = () => {
   useEffect(() => {
     setShowLoading(true);
 
-    setTimeout(() => {
-      setShowLoading(false);
-    }, 1400);
-  }, []);
-
-  useEffect(() => {
     const getSearch = async () => {
       try {
         if (search) {
           const result = await searchFunc(search);
-          console.log(result);
-          setSearchList(result);
+          if (result) {
+            setSearchList(result);
+
+            setShowLoading(false);
+          }
         }
       } catch (error) {
         console.error("getSearch ta hata var:", error);

@@ -1,19 +1,13 @@
 import axios from "axios";
 import API_KEY from "./config";
 
-const BASE_URL = "https://www.googleapis.com/youtube/v3";
+const BASE_URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=channel®ionCode=TR&order=viewCount&maxResults=6&relevanceLanguage=tr&key=${API_KEY}`;
 
 export const getTopChannels = async () => {
-  const response = await axios.get(`${BASE_URL}/search`, {
-    params: {
-      part: "snippet",
-      type: "channel",
-      regionCode: "TR",
-      order: "viewCount",
-      maxResults: 5,
-      key: API_KEY,
-    },
-  });
-
-  return response.data.items;
+  try {
+    const response = await axios.get(`${BASE_URL}`);
+    return response.data.items;
+  } catch (error) {
+    console.error("topChannels verilerini redux a kaydederken hata:", error);
+  }
 };
