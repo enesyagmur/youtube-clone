@@ -1,25 +1,19 @@
 import React, { useEffect, useState } from "react";
-
 import { useNavigate, useParams } from "react-router-dom";
-
-import { getSelectedCategory } from "../../Api/selectedCategoryApi";
+import { getVideoList } from "../../Api/getVideoList";
 
 const VideoList = ({ categoryId }) => {
   const { id } = useParams();
   const [videoList, setVideoList] = useState();
   const navigate = useNavigate();
 
-  const fetchVıdeosSameCategory = async (categoryId, count) => {
-    const sameCategoryViideosResult = await getSelectedCategory(
-      categoryId,
-      count
-    );
-
-    setVideoList(sameCategoryViideosResult);
+  const fetchVıdeoList = async (categoryId) => {
+    const result = await getVideoList(categoryId);
+    setVideoList(result);
   };
 
   useEffect(() => {
-    fetchVıdeosSameCategory(categoryId, 6);
+    fetchVıdeoList(categoryId);
   }, []);
 
   const goCategory = (id) => {
@@ -27,13 +21,13 @@ const VideoList = ({ categoryId }) => {
   };
 
   return (
-    <div className="lg:w-3/12 min-h-screen flex flex-col items-center pt-6">
+    <div className="w-full lg:w-3/12 min-h-screen flex flex-col lg:items-center items-start pt-6">
       {videoList
         ? videoList.map((video, index) =>
             video.id !== id ? (
-              <div className="w-10/12 h-28 flex  mt-2 rounded-lg" key={index}>
+              <div className="w-10/12 h-28 flex mt-2 rounded-lg" key={index}>
                 <img
-                  src={video.snippet.thumbnails.default.url}
+                  src={video.snippet.thumbnails.high.url}
                   alt=""
                   className="w-5/12 h-full object-cover rounded-lg cursor-pointer"
                   onClick={() => navigate(`/video/${video.id}`)}
@@ -66,7 +60,7 @@ const VideoList = ({ categoryId }) => {
         : null}
 
       <button
-        className="w-10/12 h-12 bg-neutral-500 rounded-md mt-4 cursor-pointer hover:opacity-80"
+        className="w-10/12 h-12 bg-neutral-500 rounded-md mt-4 mb-2 lg:mb-0 cursor-pointer hover:opacity-80"
         onClick={() => goCategory(categoryId)}
       >
         More Videos

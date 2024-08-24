@@ -4,7 +4,11 @@ import { saveDataToMusics } from "../Redux/musicSlice";
 import { saveDataToSpors } from "../Redux/sporSlice";
 import { saveDataToGames } from "../Redux/gameSlice";
 
-export const getSelectedCategory = async (categoryId, count, dispatch) => {
+export const getSelectedCategoryAndSaveRedux = async (
+  categoryId,
+  count,
+  dispatch
+) => {
   const BASE_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&regionCode=TR&videoCategoryId=${categoryId}&maxResults=${count}&videoDuration=short&key=${API_KEY}`;
 
   try {
@@ -20,9 +24,6 @@ export const getSelectedCategory = async (categoryId, count, dispatch) => {
       return response.data.items;
     }
   } catch (error) {
-    console.error(
-      "Seçilen kategoriye göre veri çekerken api dan çekerken hata:",
-      error
-    );
+    console.error("Seçilen kategoriye göre api dan çekerken hata:", error);
   }
 };

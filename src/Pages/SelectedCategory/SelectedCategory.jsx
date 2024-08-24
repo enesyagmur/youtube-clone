@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getSelectedCategory } from "../../Api/selectedCategoryApi";
+import { getSelectedCategoryAndSaveRedux } from "../../Api/selectedCategoryApi";
 import { useParams } from "react-router-dom";
 import List from "../../Components/DataList/List";
 import { LuGamepad2, LuMusic } from "react-icons/lu";
@@ -46,7 +46,7 @@ const SelectedCategory = () => {
     try {
       if (categoryId === "10") {
         if (musicsData.length === 0) {
-          const result = await getSelectedCategory(
+          const result = await getSelectedCategoryAndSaveRedux(
             categoryId,
             5,
             dispatchSlice
@@ -57,7 +57,7 @@ const SelectedCategory = () => {
         }
       } else if (categoryId === "17") {
         if (gamesData.length === 0) {
-          const result = await getSelectedCategory(
+          const result = await getSelectedCategoryAndSaveRedux(
             categoryId,
             5,
             dispatchSlice
@@ -68,7 +68,7 @@ const SelectedCategory = () => {
         }
       } else if (categoryId === "20") {
         if (sportsData.length === 0) {
-          const result = await getSelectedCategory(
+          const result = await getSelectedCategoryAndSaveRedux(
             categoryId,
             5,
             dispatchSlice

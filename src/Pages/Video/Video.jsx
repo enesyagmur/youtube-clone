@@ -61,26 +61,26 @@ const Video = () => {
   }, []);
 
   return (
-    <div className={`w-full min-h-screen flex ${theme[0]} ${theme[1]}`}>
-      <div className="lg:w-9/12 min-h-screen flex-col items-center justify-center">
+    <div className={`w-full flex lg:flex-row flex-col ${theme[0]} ${theme[1]}`}>
+      <div className="w-full lg:w-9/12 min-h-screen flex-col items-center justify-center">
         {video && channel ? (
           <>
             <iframe
-              className="lg:w-full lg:h-[550px] mt-6 rounded-xl"
+              className="w-[98%] h-[250px] sm:h-[350px] md:h-[450px] lg:h-[550px] mt-6 rounded-xl"
               src={`https://www.youtube.com/embed/${id}`}
               allowFullScreen
               title={video.snippet.title}
             />
             <p className="font-bold mt-2">{video.snippet.localized.title}</p>
-            <div className="w-full h-20 flex items-center">
-              <div className="lg:w-2/12 h-20 flex items-center justify-between">
+            <div className="w-[98%] lg:w-full h-30 md:h-20 flex flex-col md:flex-row items-center justify-between">
+              <div className="w-11/12 md:w-[290px] h-20 flex items-center sm:justify-between  relative">
                 <img
                   src={channel.snippet.thumbnails.default.url}
                   alt=""
                   className="w-[40px] h-[40px] object-cover rounded-full"
                 />
-                <div className="flex-col">
-                  <p className="font-bold text-sm">
+                <div className="flex-col absolute md:relative left-12 md:left-0">
+                  <p className="font-bold text-sm ">
                     {channel.snippet.localized.title}
                   </p>
                   {channel.statistics.subscriberCount > 999999 ? (
@@ -97,13 +97,14 @@ const Video = () => {
                     </p>
                   )}
                 </div>
+                <button
+                  className={`w-[100px] h-10 rounded-full ${theme[2]} ${theme[1]} md:ml-6  absolute md:relative right-2 md:right-0`}
+                >
+                  Subscribe
+                </button>
               </div>
-              <button
-                className={`lg:w-28 h-10 rounded-full ${theme[2]} ${theme[1]} ml-6`}
-              >
-                Subscribe
-              </button>
-              <div className="lg:w-8/12 h-10 flex items-center justify-end ">
+
+              <div className="w-[250px] h-10 flex items-center justify-end ">
                 <div
                   className={`w-28 h-8 flex items-center justify-evenly rounded-full ${theme[2]} ${theme[1]}`}
                 >
@@ -126,7 +127,7 @@ const Video = () => {
               </div>
             </div>
             <div
-              className={`w-full rounded-xl ${theme[2]} ${theme[1]} mt-2 p-2`}
+              className={`w-[98%] rounded-xl ${theme[2]} ${theme[1]} mt-2 p-2`}
             >
               <div className="w-full flex font-semibold">
                 {video.statistics.viewCount > 999999 ? (
@@ -141,7 +142,7 @@ const Video = () => {
                 )}
                 <p className="ml-2">{publishDate}</p>
               </div>
-              <p className="mt-3">{video.snippet.description}</p>
+              <p className="mt-3 ">{video.snippet.description}</p>
             </div>
           </>
         ) : null}
