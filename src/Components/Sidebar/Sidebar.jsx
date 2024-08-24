@@ -26,7 +26,7 @@ const Sidebar = () => {
             alt=""
             className="w-[25px] h-[25px] object-cover"
           />
-          <p className="font-semibold hidden md:flex">Youtube</p>
+          <p className="font-semibold hidden md:flex">YouTube</p>
           <p className="text-[8px] font-bold text-neutral-500 ml-1 mb-4"> TR</p>
         </div>
       </div>

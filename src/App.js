@@ -20,4 +20,7 @@ function App() {
 
 export default App;
 
-// shorts sayfasını yapıyorum
+// sayfanın iconunu değiştirmeye çalışıyorum
+// kolaysa video yorumlarını eklemeye çalışacağım
+// + neler ekleyebilirim
+// main branch e pushlama linkedinde post
