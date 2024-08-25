@@ -2,7 +2,7 @@ import axios from "axios";
 import API_KEY from "./config";
 
 export const getVideoList = async (categoryId) => {
-  const BASE_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&regionCode=TR&videoCategoryId=${categoryId}&maxResults=9&videoDuration=short&key=${API_KEY}`;
+  const BASE_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&regionCode=TR&videoCategoryId=${categoryId}&maxResults=12&videoDuration=short&key=${API_KEY}`;
 
   try {
     const response = await axios.get(`${BASE_URL}`);

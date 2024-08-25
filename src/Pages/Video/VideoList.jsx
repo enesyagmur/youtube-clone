@@ -58,13 +58,6 @@ const VideoList = ({ categoryId }) => {
             ) : null
           )
         : null}
-
-      <button
-        className="w-10/12 h-12 bg-neutral-500 rounded-md mt-4 mb-2 lg:mb-0 cursor-pointer hover:opacity-80"
-        onClick={() => goCategory(categoryId)}
-      >
-        More Videos
-      </button>
     </div>
   );
 };
