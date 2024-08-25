@@ -47,7 +47,7 @@ const Home = () => {
       {data
         ? data.map((item, index) => (
             <div
-              className="w-[240px] h-56 flex flex-col  m-2 cursor-pointer  "
+              className="w-11/12 sm:w-5/12 md:w-4/12 lg:w-3/12 xl:w-2/12 h-56 flex flex-col  m-2 cursor-pointer  "
               key={index}
               onClick={() => navigate(`/video/${item.id}`)}
             >

@@ -41,7 +41,7 @@ const Shorts = () => {
       {shortsData
         ? shortsData.map((item, index) => (
             <div
-              className="w-full h-[600px] flex justify-center mt-4 lg:mt-8 cursor-pointer"
+              className="w-full h-144 flex justify-center mt-4 lg:mt-8 cursor-pointer"
               key={index}
               onClick={() => navigate(`/video/${item.id.videoId}`)}
             >
