@@ -25,12 +25,12 @@ const VideoList = ({ categoryId }) => {
                 <img
                   src={video.snippet.thumbnails.high.url}
                   alt=""
-                  className="w-7/12 h-full object-cover rounded-lg cursor-pointer"
+                  className="w-5/12 lg:w-7/12 h-full object-cover rounded-lg cursor-pointer"
                   onClick={() => navigate(`/video/${video.id}`)}
                 />
-                <div className="w-5/12 h-full flex-col items-center pl-2">
+                <div className="w-7/12 lg:w-5/12  h-full flex-col items-center pl-2">
                   <p
-                    className="w-full text-md mt-2 font-semibold cursor-pointer"
+                    className="lg:w-full text-sm mt-2 font-semibold cursor-pointer"
                     onClick={() => navigate(`/video/${video.id}`)}
                   >
                     {video.snippet.localized.title}
