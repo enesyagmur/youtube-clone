@@ -16,9 +16,9 @@ const List = ({ data }) => {
               <img
                 src={item.snippet.thumbnails.high.url}
                 alt=""
-                className="w-11/12 sm:w-8/12 md:w-7/12 lg:w-6/12 h-52 object-cover rounded-xl cursor-pointer"
+                className="w-11/12 sm:w-7/12 md:w-6/12 lg:w-5/12 h-52 object-cover rounded-xl cursor-pointer"
               />
-              <div className="w-full sm:w-4/12 lg:w-5/12 h-24 sm:h-28 sm:ml-4 flex flex-col justify-center ">
+              <div className="w-full sm:w-4/12 md:w-5/12 lg:w-6/12 h-24 sm:h-28 sm:ml-4 flex flex-col justify-center ">
                 <p className="w-full">{item.snippet.title}</p>
                 <div className="w-full flex text-neutral-400 items-center">
                   <p
