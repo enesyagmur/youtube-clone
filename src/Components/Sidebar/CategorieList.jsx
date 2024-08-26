@@ -27,14 +27,7 @@ const CategorieList = ({ theme2 }) => {
         <SiYoutubeshorts className="text-lg" />
         <p className="sidebar-categorie-name">Shorts</p>
       </div>
-      <div className="sidebar-categorie">
-        <MdOutlineSubscriptions className="text-lg" />
-        <p className="sidebar-categorie-name">subscription</p>
-      </div>
-      <div className="sidebar-categorie">
-        <GrHistory className="text-lg" />
-        <p className="sidebar-categorie-name">History</p>
-      </div>
+
       <div className="w-full h-10 flex items-center justify-center">
         <div className={`w-full h-[2px] ${theme2}`}></div>
       </div>

@@ -1,7 +1,7 @@
 import axios from "axios";
 import API_KEY from "./config";
 
-const BASE_URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=channel®ionCode=TR&order=viewCount&maxResults=10&relevanceLanguage=tr&key=${API_KEY}`;
+const BASE_URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=channel®ionCode=TR&order=viewCount&maxResults=13&relevanceLanguage=tr&key=${API_KEY}`;
 
 export const getTopChannels = async () => {
   try {
