@@ -46,7 +46,7 @@ const Shorts = () => {
               onClick={() => navigate(`/video/${item.id.videoId}`)}
             >
               <iframe
-                className="w-11/12 sm:w-6/12 md:w-5/12 lg:w-4/12 h-full rounded-xl"
+                className="w-11/12 sm:w-7/12 md:w-6/12 lg:w-4/12 xl:w-3/12 h-full rounded-xl"
                 src={`https://www.youtube.com/embed/${item.id.videoId}`}
                 allowFullScreen
                 title={item.snippet.title}
