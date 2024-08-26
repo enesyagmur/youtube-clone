@@ -27,10 +27,10 @@ const Shorts = () => {
 
   useEffect(() => {
     fetchData();
-    if (shortsData) {
+    if (data) {
       setShowLoading(false);
     }
-  }, [shortsData]);
+  }, [data]);
 
   return (
     <div
@@ -38,8 +38,8 @@ const Shorts = () => {
     >
       {showLoading && <Loading />}
 
-      {shortsData
-        ? shortsData.map((item, index) => (
+      {data
+        ? data.map((item, index) => (
             <div
               className="w-full h-144 flex justify-center mt-4 lg:mt-8 cursor-pointer"
               key={index}
