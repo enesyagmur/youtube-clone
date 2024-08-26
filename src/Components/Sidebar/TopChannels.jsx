@@ -26,7 +26,7 @@ const TopChannels = ({ theme2 }) => {
       {data
         ? data.map((item, index) => (
             <div
-              className="w-10/12 flex  items-center mt-2 cursor-pointer hover:opacity-80"
+              className="w-full flex  items-center mt-2 cursor-pointer hover:opacity-80"
               key={index}
             >
               <img

@@ -40,34 +40,34 @@ const Home = () => {
 
   return (
     <div
-      className={`w-full min-h-screen ${theme[0]} ${theme[1]} flex flex-wrap justify-center`}
+      className={`w-full min-h-screen ${theme[0]} ${theme[1]} flex flex-wrap justify-center overflow-x-hidden`}
     >
       {showLoading && <Loading />}
 
       {data
         ? data.map((item, index) => (
             <div
-              className="w-11/12 sm:w-5/12 md:w-4/12 lg:w-3/12 xl:w-2/12 h-56 flex flex-col  m-2 cursor-pointer  "
+              className="w-11/12 sm:w-5/12 md:w-4/12 lg:w-3/12 xl:w-2/12 h-64 flex flex-col  m-2 cursor-pointer  "
               key={index}
               onClick={() => navigate(`/video/${item.id}`)}
             >
               <img
                 src={item.snippet.thumbnails.high.url}
                 alt=""
-                className="w-full h-40 object-cover cursor-pointer rounded-3xl"
+                className="w-full h-48 object-cover cursor-pointer rounded-3xl"
               />
               <div className="w-full h-16 ml-4 flex flex-col justify-center ">
-                <p className="w-full text-[10px]">{item.snippet.title}</p>
+                <p className="w-full text-md">{item.snippet.title}</p>
                 <div className="w-full flex text-neutral-400 items-center">
                   <p
-                    className=" text-[10px]"
+                    className=" text-sm"
                     onClick={() =>
                       navigate(`/channel/${item.snippet.channelId}`)
                     }
                   >
                     {item.snippet.channelTitle}
                   </p>
-                  <FaCheckCircle className="text-[10px] ml-1 " />
+                  <FaCheckCircle className="text-sm ml-1 " />
                 </div>
               </div>
             </div>
