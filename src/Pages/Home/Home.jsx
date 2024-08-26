@@ -60,7 +60,7 @@ const Home = () => {
                 <p className="w-full text-md">{item.snippet.title}</p>
                 <div className="w-full flex text-neutral-400 items-center">
                   <p
-                    className=" text-sm"
+                    className="text-sm text-red-300"
                     onClick={() =>
                       navigate(`/channel/${item.snippet.channelId}`)
                     }
