@@ -16,25 +16,21 @@ const VideoList = ({ categoryId }) => {
     fetchVıdeoList(categoryId);
   }, []);
 
-  const goCategory = (id) => {
-    navigate(`/categories/${id}`);
-  };
-
   return (
     <div className="w-full lg:w-3/12 min-h-screen flex flex-col lg:items-center items-start pt-6">
       {videoList
         ? videoList.map((video, index) =>
             video.id !== id ? (
-              <div className="w-10/12 h-28 flex mt-2 rounded-lg" key={index}>
+              <div className="w-full h-28 flex mt-2 rounded-lg" key={index}>
                 <img
                   src={video.snippet.thumbnails.high.url}
                   alt=""
-                  className="w-5/12 h-full object-cover rounded-lg cursor-pointer"
+                  className="w-7/12 h-full object-cover rounded-lg cursor-pointer"
                   onClick={() => navigate(`/video/${video.id}`)}
                 />
-                <div className="w-7/12 h-full flex-col items-center pl-2">
+                <div className="w-5/12 h-full flex-col items-center pl-2">
                   <p
-                    className="w-full text-[10px] mt-2 font-semibold cursor-pointer"
+                    className="w-full text-md mt-2 font-semibold cursor-pointer"
                     onClick={() => navigate(`/video/${video.id}`)}
                   >
                     {video.snippet.localized.title}
@@ -44,11 +40,11 @@ const VideoList = ({ categoryId }) => {
                   </p>
 
                   {video.statistics.viewCount > 999999 ? (
-                    <p className="text-neutral-400 text-[8px] mt-1">
+                    <p className="text-neutral-400 text-sm mt-1">
                       {video.statistics.viewCount.trim("")[0]} Mn views
                     </p>
                   ) : (
-                    <p className="text-neutral-400 text-[8px] mt-1">
+                    <p className="text-neutral-400 text-sm mt-1">
                       {video.statistics.viewCount.trim("").substring(0, 3)} B
                       views
                     </p>
