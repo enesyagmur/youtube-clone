@@ -40,7 +40,7 @@ const Home = () => {
 
   return (
     <div
-      className={`w-full min-h-screen ${theme[0]} ${theme[1]} flex flex-wrap justify-center overflow-x-hidden`}
+      className={`w-full min-h-screen ${theme[0]} ${theme[1]} flex flex-wrap justify-center W`}
     >
       {showLoading && <Loading />}
 
