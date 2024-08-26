@@ -1,8 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { RxHamburgerMenu } from "react-icons/rx";
-
-import yotubeLogo from "../../Assets/youtube-logo.png";
+import yotubeLogo from "../../Assets/youtube.png";
 import CategorieList from "./CategorieList";
 import TopChannels from "./TopChannels";
 import { useNavigate } from "react-router-dom";

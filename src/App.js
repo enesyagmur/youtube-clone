@@ -19,5 +19,3 @@ function App() {
 }
 
 export default App;
-
-// search a enter da ekleyeceğim ya da form üzerinden yapacagım
