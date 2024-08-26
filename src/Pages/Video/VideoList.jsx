@@ -22,16 +22,16 @@ const VideoList = ({ categoryId }) => {
         ? videoList.map((video, index) =>
             video.id !== id ? (
               <div
-                className="w-full h-52 sm:h-28 flex flex-col sm:flex-row mt-4 lg:mt-2 rounded-lg"
+                className="w-full h-52 sm:h-28 flex flex-col sm:flex-row items-center mt-4 lg:mt-2 rounded-lg"
                 key={index}
               >
                 <img
                   src={video.snippet.thumbnails.high.url}
                   alt=""
-                  className="w-full sm:w-4/12 lg:w-7/12 h-32 sm:h-full object-cover rounded-lg cursor-pointer"
+                  className="w-7/12 sm:w-4/12 lg:w-7/12 h-32 sm:h-full object-cover rounded-lg cursor-pointer"
                   onClick={() => navigate(`/video/${video.id}`)}
                 />
-                <div className="w-full sm:w-8/12 lg:w-5/12 h-20 sm:h-full flex-col items-center pl-2">
+                <div className="w-7/12 sm:w-8/12 lg:w-5/12 h-20 sm:h-full flex-col items-center pl-2">
                   <p
                     className="lg:w-full text-[10px] mt-2 font-semibold cursor-pointer"
                     onClick={() => navigate(`/video/${video.id}`)}
