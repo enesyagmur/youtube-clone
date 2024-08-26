@@ -59,27 +59,27 @@ const Live = () => {
       {data
         ? data.map((item, index) => (
             <div
-              className="w-full sm:w-10/12 md:w-9/12 lg:w-8/12 h-64 sm:h-40 sm:flex-row flex flex-col mt-4 cursor-pointer lg:ml-36"
+              className="w-full sm:w-11/12 md:w-10/12 lg:w-8/12 h-80 sm:h-52 sm:flex-row flex flex-col mt-6 cursor-pointer lg:ml-36"
               key={index}
               onClick={() => navigate(`/video/${item.id.videoId}`)}
             >
               <img
                 src={item.snippet.thumbnails.high.url}
                 alt=""
-                className="w-11/12 sm:w-7/12 md:w-6/12 lg:w-5/12 h-40 object-cover rounded-lg cursor-pointer border-2 border-red-700"
+                className="w-full sm:w-8/12 md:w-7/12 lg:w-6/12 h-52 object-cover rounded-lg cursor-pointer border-2 border-red-700"
               />
-              <div className="w-full sm:w-4/12 md:w-5/12 lg:w-6/12 h-24 sm:h-36 ml-4 flex flex-col justify-center ">
+              <div className="w-full sm:w-4/12 md:w-5/12 lg:w-6/12 h-28 sm:h-36 ml-4 flex flex-col justify-center ">
                 <p className="w-full">{item.snippet.title}</p>
                 <div className="w-full flex text-neutral-400 items-center">
                   <p
-                    className=" text-[10px]"
+                    className="text-md"
                     onClick={() =>
                       navigate(`/channel/${item.snippet.channelId}`)
                     }
                   >
                     {item.snippet.channelTitle}
                   </p>
-                  <FaCheckCircle className="text-[10px] ml-1 " />
+                  <FaCheckCircle className="text-sm ml-1 " />
                 </div>
               </div>
             </div>

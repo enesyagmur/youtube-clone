@@ -34,7 +34,7 @@ const Shorts = () => {
 
   return (
     <div
-      className={`w-full h-[5730px] flex-col items-center ${theme[0]} ${theme[1]}`}
+      className={`w-full min-h-screen flex-col items-center ${theme[0]} ${theme[1]}`}
     >
       {showLoading && <Loading />}
 
