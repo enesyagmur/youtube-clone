@@ -40,7 +40,7 @@ const Home = () => {
 
   return (
     <div
-      className={`w-full min-h-screen ${theme[0]} ${theme[1]} flex flex-wrap justify-center W`}
+      className={`w-full min-h-screen ${theme[0]} ${theme[1]} flex flex-wrap justify-center`}
     >
       {showLoading && <Loading />}
 
@@ -57,10 +57,10 @@ const Home = () => {
                 className="w-full h-48 object-cover cursor-pointer rounded-3xl"
               />
               <div className="w-full h-16 ml-4 flex flex-col justify-center ">
-                <p className="w-full text-md">{item.snippet.title}</p>
+                <p className="w-full text-sm">{item.snippet.title}</p>
                 <div className="w-full flex text-neutral-400 items-center">
                   <p
-                    className="text-sm text-red-300"
+                    className="text-sm"
                     onClick={() =>
                       navigate(`/channel/${item.snippet.channelId}`)
                     }
