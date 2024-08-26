@@ -47,7 +47,7 @@ const Search = () => {
                 alt=""
                 className="w-11/12 sm:w-8/12 md:w-7/12 lg:w-6/12 h-52 object-cover rounded-xl cursor-pointer"
               />
-              <div className="w-full sm:w-4/12 lg:w-5/12 h-24 sm:h-36 sm:ml-4 flex flex-col justify-center">
+              <div className="w-full sm:w-4/12 lg:w-5/12 h-24 sm:h-52 sm:ml-4 flex flex-col justify-center">
                 <p className="w-full">{item.snippet.title}</p>
                 <div className="w-full flex text-neutral-400 items-center">
                   <p

@@ -68,7 +68,7 @@ const Live = () => {
                 alt=""
                 className="w-full sm:w-7/12 md:w-6/12 lg:w-5/12 h-52 object-cover rounded-lg cursor-pointer border-2 border-red-700"
               />
-              <div className="w-full sm:w-4/12 md:w-5/12 lg:w-6/12 h-28 sm:h-36 ml-4 flex flex-col justify-center ">
+              <div className="w-full sm:w-4/12 md:w-5/12 lg:w-6/12 h-28 sm:h-52 ml-4 flex flex-col justify-center ">
                 <p className="w-full">{item.snippet.title}</p>
                 <div className="w-full flex text-neutral-400 items-center">
                   <p
