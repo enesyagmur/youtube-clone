@@ -4,7 +4,6 @@ import List from "../../Components/DataList/List";
 import { FaFire } from "react-icons/fa6";
 import { getTrendsFunc } from "../../Api/trendsApi";
 import Loading from "../Loading/Loading";
-import { useNavigate } from "react-router-dom";
 
 const Trends = () => {
   const [data, setData] = useState();

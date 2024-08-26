@@ -6,8 +6,6 @@ import { CgLivePhoto } from "react-icons/cg";
 import { LuGamepad2 } from "react-icons/lu";
 import { TfiCup } from "react-icons/tfi";
 import { SiYoutubeshorts } from "react-icons/si";
-import { MdOutlineSubscriptions } from "react-icons/md";
-import { GrHistory } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
 
 const CategorieList = ({ theme2 }) => {
