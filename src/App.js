@@ -20,5 +20,4 @@ function App() {
 
 export default App;
 
-// vercel e deploy ettim ama px olarak değer verdiklerimde sorun var galiba ana sayfayı düzelttim ama shorts uzunlıgu hala hatalı
-// vercel de sayfayı responsive için iyice denemem lazım
+// search a enter da ekleyeceğim ya da form üzerinden yapacagım

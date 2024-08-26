@@ -22,7 +22,8 @@ const Searchbar = () => {
     dispatch(changeMode());
   };
 
-  const searchButtonFunc = () => {
+  const searchFunc = (e) => {
+    e.preventDefault();
     navigate(`/search/${search}`);
     setSearch("");
   };
@@ -32,7 +33,8 @@ const Searchbar = () => {
       className={`w-full h-12 flex items-center justify-between ${theme[0]} ${theme[1]} font-roboto`}
     >
       <div className="w-9/12 md:w-9/12 h-full flex items-center justify-center ">
-        <div
+        <form
+          onSubmit={searchFunc}
           className={`w-full sm:w-10/12 md:w-9/12 lg:w-6/12 h-8 rounded-full flex items-center justify-between ${theme[2]} ${theme[1]}`}
         >
           <input
@@ -42,11 +44,10 @@ const Searchbar = () => {
             onChange={(e) => setSearch(e.target.value)}
             className={`w-11/12 h-7 ml-[2px] pl-4 text-sm text-black rounded-l-full placeholder-neutral-400`}
           />
-          <IoSearchOutline
-            className="ml-1 mr-3 text-lg"
-            onClick={searchButtonFunc}
-          />
-        </div>
+          <button type="submit" className="ml-1 mr-3">
+            <IoSearchOutline className=" ext-lg" />
+          </button>
+        </form>
         <div
           className={`hidden md:flex w-8 h-9 ml-2 rounded-full  items-center justify-center ${theme[2]} ${theme[1]}`}
         >
