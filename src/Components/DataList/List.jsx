@@ -16,7 +16,7 @@ const List = ({ data }) => {
               <img
                 src={item.snippet.thumbnails.high.url}
                 alt=""
-                className="w-11/12 sm:w-8/12 lg:w-7/12 h-48 object-cover rounded-xl cursor-pointer"
+                className="w-11/12 sm:w-8/12 md:w-7/12 lg:w-6/12 h-48 object-cover rounded-xl cursor-pointer"
               />
               <div className="w-full sm:w-4/12 lg:w-5/12 h-24 sm:h-36 sm:ml-4 flex flex-col justify-center ">
                 <p className="w-full">{item.snippet.title}</p>
@@ -27,13 +27,13 @@ const List = ({ data }) => {
                   >
                     {item.snippet.channelTitle}
                   </p>
-                  <FaCheckCircle className="text-[10px] ml-1 " />
+                  <FaCheckCircle className="text-sm ml-1 " />
                   {item.statistics.viewCount > 999999 ? (
-                    <p className="text-[10px] ml-1">
+                    <p className="text-sm ml-1">
                       {item.statistics.viewCount.trim("")[0]} Mn views
                     </p>
                   ) : (
-                    <p className="text-[10px] ml-1">
+                    <p className="text-sm ml-1">
                       {item.statistics.viewCount.trim("").substring(0, 3)} B
                       views
                     </p>
