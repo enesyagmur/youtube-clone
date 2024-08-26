@@ -48,7 +48,7 @@ const SelectedCategory = () => {
         if (musicsData.length === 0) {
           const result = await getSelectedCategoryAndSaveRedux(
             categoryId,
-            5,
+            10,
             dispatchSlice
           );
           setData(result);
@@ -59,7 +59,7 @@ const SelectedCategory = () => {
         if (gamesData.length === 0) {
           const result = await getSelectedCategoryAndSaveRedux(
             categoryId,
-            5,
+            10,
             dispatchSlice
           );
           setData(result);
@@ -70,7 +70,7 @@ const SelectedCategory = () => {
         if (sportsData.length === 0) {
           const result = await getSelectedCategoryAndSaveRedux(
             categoryId,
-            5,
+            10,
             dispatchSlice
           );
 
