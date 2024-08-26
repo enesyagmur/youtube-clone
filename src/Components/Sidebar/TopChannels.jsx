@@ -8,7 +8,6 @@ const TopChannels = ({ theme2 }) => {
     try {
       const result = await getTopChannels();
       setData(result);
-      console.log("veri api dan geldi");
     } catch (error) {
       console.error("Topchannels da verileri çekerken hata");
     }
