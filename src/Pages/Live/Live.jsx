@@ -59,14 +59,14 @@ const Live = () => {
       {data
         ? data.map((item, index) => (
             <div
-              className="w-full sm:w-11/12 md:w-10/12 lg:w-8/12 h-96 sm:h-68 sm:flex-row flex flex-col mt-6 cursor-pointer lg:ml-36"
+              className="w-full sm:w-11/12 md:w-10/12 lg:w-8/12 h-80 sm:h-52 sm:flex-row flex flex-col mt-6 cursor-pointer lg:ml-36"
               key={index}
               onClick={() => navigate(`/video/${item.id.videoId}`)}
             >
               <img
                 src={item.snippet.thumbnails.high.url}
                 alt=""
-                className="w-full sm:w-7/12 md:w-6/12 lg:w-5/12 h-68 object-cover rounded-lg cursor-pointer border-2 border-red-700"
+                className="w-full sm:w-7/12 md:w-6/12 lg:w-5/12 h-52 object-cover rounded-lg cursor-pointer border-2 border-red-700"
               />
               <div className="w-full sm:w-4/12 md:w-5/12 lg:w-6/12 h-28 sm:h-36 ml-4 flex flex-col justify-center ">
                 <p className="w-full">{item.snippet.title}</p>
