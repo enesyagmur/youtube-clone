@@ -27,10 +27,10 @@ const Shorts = () => {
 
   useEffect(() => {
     fetchData();
-    if (data) {
+    if (shortsData) {
       setShowLoading(false);
     }
-  }, [data]);
+  }, [shortsData]);
 
   return (
     <div
